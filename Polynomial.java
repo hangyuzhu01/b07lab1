@@ -35,8 +35,10 @@ public class Polynomial {
 		exponents = new int[terms.length];
 
 		for (int i = 0; i < terms.length; i++) {
+			if (terms[i].isEmpty())
+				continue;
+			
 			String[] term = terms[i].split("x");
-
 			if (term.length == 2) {
 				coefficients[i] = Double.parseDouble(term[0]);
 				exponents[i] = Integer.parseInt(term[1]);
